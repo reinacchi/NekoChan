@@ -34,3 +34,12 @@ Once you run these commands in order and successfully, a log should appears indi
 # ESLint
 npm run lint:framework
 npm run lint:framework:fix # Automatically fix ESLint problems
+```
+
+## Third-Party Resources
+
+These are the resources used in NekoChan.
+
+- [Eris](https://github.com/abalabahaha/eris)
+- [Fluxpoint API](https://fluxpoint.dev/api)
+    - [FluxpointJS](https://github.com/FluxpointDev/fluxpoint-js)
