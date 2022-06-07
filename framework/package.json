@@ -1,0 +1,41 @@
+{
+  "name": "nekochan-framework",
+  "version": "1.0.0",
+  "description": "The main framework used by NekoChan",
+  "main": "src/index.js",
+  "files": [
+    "src/**/*"
+  ],
+  "types": "src/index.d.ts",
+  "scripts": {
+    "build": "tsc",
+    "lint": "eslint --ext \".ts\" --ignore-path .gitignore . && echo \"\u001b[1m\u001b[32mSUCCESS\u001b[39m\u001b[22m\" || echo \"\u001b[1m\u001b[31mFAILED\u001b[39m\u001b[22m\"",
+    "lint:fix": "eslint --ext \".ts\" --ignore-path .gitignore . --fix && echo \"\u001b[1m\u001b[32mSUCCESS\u001b[39m\u001b[22m\" || echo \"\u001b[1m\u001b[31mFAILED\u001b[39m\u001b[22m\""
+  },
+  "keywords": [
+    "nekochan",
+    "weeb",
+    "fluxpoint",
+    "neko",
+    "discord-bot",
+    "eris"
+  ],
+  "author": "Reinhardt <contact@reinhello.tech>",
+  "license": "MIT",
+  "dependencies": {
+    "chalk": "^4.1.2",
+    "eris": "^0.17.0",
+    "fluxpoint-js": "^1.3.16",
+    "moment": "^2.29.3",
+    "xen.db": "^3.2.0"
+  },
+  "devDependencies": {
+    "@typescript-eslint/eslint-plugin": "^5.27.0",
+    "@typescript-eslint/parser": "^5.27.0",
+    "eslint": "^8.17.0",
+    "eslint-plugin-sort-imports-es6-autofix": "^0.6.0",
+    "eslint-plugin-sort-keys-fix": "^1.1.2",
+    "tslib": "^2.4.0",
+    "typescript": "^4.7.3"
+  }
+}
