@@ -1,0 +1,17 @@
+{
+  "name": "nekochan",
+  "version": "1.0.0",
+  "description": "NekoChan Bot",
+  "scripts": {
+    "build:framework": "cd framework && npm run build",
+    "dev:bot": "cd bot && npm run dev",
+    "lint:framework": "cd framework && npm run lint",
+    "lint:framework:fix": "cd framework && npm run lint:fix",
+    "start:bot": "cd bot && npm start"
+  },
+  "keywords": [
+    "nekochan"
+  ],
+  "author": "Reinhardt <contact@reinhello.tech>",
+  "license": "MIT"
+}
