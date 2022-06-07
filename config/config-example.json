@@ -1,0 +1,10 @@
+{
+    "API": {
+        "FLUXPOINT": "https://fluxpoint.dev/api/access"
+    },
+    "BOT": {
+        "ADMIN": ["User ID"],
+        "PREFIX": "!",
+        "TOKEN": "TOKEN"
+    }
+}
