@@ -4,6 +4,8 @@
   "description": "NekoChan Bot",
   "scripts": {
     "build:framework": "cd framework && npm run build",
+    "ci:bot": "cd bot && npm ci",
+    "ci:framework": "cd framework && npm ci",
     "dev:bot": "cd bot && npm run dev",
     "lint:framework": "cd framework && npm run lint",
     "lint:framework:fix": "cd framework && npm run lint:fix",
