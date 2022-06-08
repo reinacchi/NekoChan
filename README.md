@@ -2,7 +2,7 @@
 
 A small local Discord bot for weeb who loves anime images, purely written in [TypeScript](https://www.typescriptlang.org) using the [Eris](https://github.com/abalabahaha/eris) Discord library.
 
-- This Discord bot is stil **Work In Progress**.
+- This Discord bot is still **Work In Progress**.
 
 ## Developing
 
@@ -43,3 +43,4 @@ These are the resources used in NekoChan.
 - [Eris](https://github.com/abalabahaha/eris)
 - [Fluxpoint API](https://fluxpoint.dev/api)
     - [FluxpointJS](https://github.com/FluxpointDev/fluxpoint-js)
+- [XenDB](https://github.com/reinhello/xen.db)
