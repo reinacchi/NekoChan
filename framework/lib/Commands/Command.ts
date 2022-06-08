@@ -5,7 +5,7 @@ import { pingInteraction } from "./Interaction/FPing";
 import { azurLaneISFWInteraction, maidISFWInteraction, nekoISFWInteraction } from "./Interaction/SFW";
 import { registerCommandInteraction } from "./Interaction/FRegister";
 import { cleanInteraction } from "./Interaction/FClean";
-import { nekoINSFWInteraction, yuriGNSFWInteraction, yuriINSFWInteraction } from "./Interaction/NSFW";
+import { azurLaneINSFWInteraction, nekoINSFWInteraction, yuriGNSFWInteraction, yuriINSFWInteraction } from "./Interaction/NSFW";
 import { setupPanelInteraction } from "./Interaction/FSetupPanel";
 import { setupBookmarkInteraction } from "./Interaction/FSetupBookmark";
 
@@ -30,6 +30,14 @@ export class Command {
     constructor(payload: ICommandRunPayload) {
         this.client = payload.client;
         this.interaction = payload.interaction;
+    }
+
+    /**
+     * Sends a NSFW Azur Lane image
+     * @returns {Promise<void>}
+     */
+    public azurLaneINSFWInteraction() {
+        return azurLaneINSFWInteraction(this.client, this.interaction);
     }
 
     /**
