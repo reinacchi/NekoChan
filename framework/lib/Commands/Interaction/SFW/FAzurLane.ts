@@ -31,7 +31,7 @@ export async function azurLaneISFWInteraction(client: NekoChanClient, interactio
                             style: 1,
                             type: 2
                         },
-                        { 
+                        {
                             label: "Source",
                             style: 5,
                             type: 2,

@@ -5,4 +5,4 @@ export const event: IEvent = {
     run: async (client, err: string, shardID: number) => {
         client.logger.warn({ message: err, subTitle: "NekoChanFramework::Events::Warn", title: `SHARD ${shardID ?? "N/A"}` });
     }
-}
+};
