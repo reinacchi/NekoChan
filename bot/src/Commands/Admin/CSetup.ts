@@ -1,4 +1,5 @@
 import { NekoChanCommand } from "nekochan-framework";
+import { RichEmbed } from "nekochan-framework/src/Util";
 
 type TPanel = "all";
 
@@ -29,6 +30,13 @@ export const command: NekoChanCommand.ICommand = {
     type: 1,
     run: async (payload) => {
         const args: { bookmark?: string, panel?: TPanel } = {};
+
+        if (!payload.interaction.data.options) {
+            return payload.interaction.createMessage({
+                embeds: [new RichEmbed().setColor(0xFFC0BC).setDescription("Please provide at least one option!")],
+                flags: 64
+            });
+        }
 
         for (const option of payload.interaction.data.options) {
             args[option.name] = (option as any).value as string;
