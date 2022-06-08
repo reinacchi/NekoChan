@@ -13,18 +13,15 @@ export class Command {
 
     /**
      * NekoChan Eris client
+     * @private
      */
-    public client: NekoChanClient;
+    private client: NekoChanClient;
 
     /**
      * Eris Interaction
+     * @private
      */
-    public interaction: CommandInteraction<TextableChannel>;
-
-    /**
-     * The whole command payload itself
-     */
-    public payload: ICommandRunPayload;
+    private interaction: CommandInteraction<TextableChannel>;
 
     /**
      * The main Command class
@@ -33,18 +30,21 @@ export class Command {
     constructor(payload: ICommandRunPayload) {
         this.client = payload.client;
         this.interaction = payload.interaction;
-        this.payload = payload;
     }
 
     /**
      * Sends a SFW Azur Lane image
      * @returns {Promise<void>}
      */
-    public azurLaneISFWInteraction() {
+    public azurLaneISFWInteraction(): Promise<void> {
         return azurLaneISFWInteraction(this.client, this.interaction);
     }
 
-    public cleanInteraction() {
+    /**
+     * Sweep and clean messages. Max is 75 messages
+     * @returns {Promise<void>}
+     */
+    public cleanInteraction(): Promise<void> {
         return cleanInteraction(this.client, this.interaction);
     }
 
@@ -52,7 +52,7 @@ export class Command {
      * Sends a SFW Maid image
      * @returns {Promise<void>}
      */
-    public maidISFWInteraction() {
+    public maidISFWInteraction(): Promise<void> {
         return maidISFWInteraction(this.client, this.interaction);
     }
 
@@ -60,7 +60,7 @@ export class Command {
      * Sends a NSFW Neko image
      * @returns {Promise<void>}
      */
-    public nekoINSFWInteraction() {
+    public nekoINSFWInteraction(): Promise<void> {
         return nekoINSFWInteraction(this.client, this.interaction);
     }
 
@@ -68,7 +68,7 @@ export class Command {
      * Sends a SFW Neko image
      * @returns {Promise<void>}
      */
-    public nekoISFWInteraction() {
+    public nekoISFWInteraction(): Promise<void> {
         return nekoISFWInteraction(this.client, this.interaction);
     }
 
@@ -76,7 +76,7 @@ export class Command {
      * Sends a ping message
      * @returns {Promise<void>}
      */
-    public pingInteraction() {
+    public pingInteraction(): Promise<void> {
         return pingInteraction(this.interaction);
     }
 
@@ -84,7 +84,7 @@ export class Command {
      * Register all slash commands in a guild
      * @returns {Promise<void>}
      */
-    public registerCommandInteraction() {
+    public registerCommandInteraction(): Promise<void> {
         return registerCommandInteraction(this.client, this.interaction);
     }
 
@@ -92,7 +92,7 @@ export class Command {
      * Setup a bookmark channel
      * @returns {Promise<void>}
      */
-    public setupBookmarkInteraction() {
+    public setupBookmarkInteraction(): Promise<void> {
         return setupBookmarkInteraction(this.client, this.interaction);
     }
 
@@ -100,7 +100,7 @@ export class Command {
      * Setup a Quick-Access panel
      * @returns {Promise<void>}
      */
-    public setupPanelInteraction() {
+    public setupPanelInteraction(): Promise<void> {
         return setupPanelInteraction(this.client, this.interaction);
     }
 
@@ -108,15 +108,15 @@ export class Command {
      * Sends a NSFW Yuri gif
      * @returns {Promise<void>}
      */
-    public yuriGNSFWInteraction() {
+    public yuriGNSFWInteraction(): Promise<void> {
         return yuriGNSFWInteraction(this.client, this.interaction);
     }
 
     /**
      * Sends a NSFW Yuri image
-     *
+     * @returns {Promise<void>}
      */
-    public yuriINSFWInteraction() {
+    public yuriINSFWInteraction(): Promise<void> {
         return yuriINSFWInteraction(this.client, this.interaction);
     }
 }
