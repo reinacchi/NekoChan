@@ -1,8 +1,7 @@
 import { NekoChanCommand } from "nekochan-framework";
-import { RichEmbed } from "nekochan-framework/src/Util";
 
 type TGifType = "NekoGif" | "YuriGif";
-type TImageType = "NekoImage" | "YuriImage";
+type TImageType = "AzurLaneImage" | "NekoImage" | "YuriImage";
 
 export const command: NekoChanCommand.ICommand = {
     category: "NSFW",
@@ -16,6 +15,10 @@ export const command: NekoChanCommand.ICommand = {
             type: 3,
             // @ts-ignore
             choices: [
+                {
+                    name: "Azur Lane",
+                    value: "AzurLaneImage"
+                },
                 {
                     name: "Neko",
                     value: "NekoImage"
@@ -50,6 +53,9 @@ export const command: NekoChanCommand.ICommand = {
 
         if (args.image) {
             switch (args.image) {
+                case "AzurLaneImage":
+                    command.azurLaneINSFWInteraction();
+                    break;
                 case "NekoImage":
                     command.nekoINSFWInteraction();
                     break;
