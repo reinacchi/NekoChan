@@ -9,6 +9,7 @@ const client = new NekoChanClient(Config.BOT.TOKEN, {
     ]
 });
 
+client.debug = Config.BOT.DEBUG_MODE;
 client.config = Config;
 client.initaliseClient({
     presence: {
