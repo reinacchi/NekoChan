@@ -8,7 +8,7 @@ A small local Discord bot for weeb who loves anime images, purely written in [Ty
 
 - **Node v16+ is required to run**
 
-Clone this repository and edit the configuration file located in the [config](https://github.com/reinhello/mangacord/tree/master/framework) folder. Please read the README for more info.
+Clone this repository and edit the configuration file located in the [config](https://github.com/reinhello/NekoChan/tree/master/config) folder. Please read the README for more info.
 
 ### Discord Bot
 
