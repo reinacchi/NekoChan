@@ -26,7 +26,7 @@ export async function setupPanelInteraction(client: NekoChanClient, interaction:
         embed: panelEmbed
     });
 
-    client.database.set(`SFWPanel.${interaction.guildID}.MessageID`, msg.id);
+    client.database.set(`Panel.${interaction.guildID}.MessageID`, msg.id);
     return interaction.createMessage({
         embeds: [embed.setDescription("Successfully setup the panel.")],
         flags: 64

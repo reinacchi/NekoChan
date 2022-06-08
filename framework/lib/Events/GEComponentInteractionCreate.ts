@@ -5,7 +5,7 @@ import { azurLaneISFWInteraction, maidISFWInteraction, nekoISFWInteraction } fro
 import { nekoINSFWInteraction, yuriGNSFWInteraction, yuriINSFWInteraction } from "../Commands/Interaction/NSFW";
 import { panelComponent } from "../DefaultComponent";
 
-type TOptionType = "NSFWNekoGif" | "NSFWNekoImage" | "NSFWYuriGif" | "NSFWYuriImage" | "SFWAzurLaneImage" | "SFWMaidImage" | "SFWNekoGif" | "SFWNekoImage";
+type TImageOption = "NSFWNekoGif" | "NSFWNekoImage" | "NSFWYuriGif" | "NSFWYuriImage" | "SFWAzurLaneImage" | "SFWMaidImage" | "SFWNekoGif" | "SFWNekoImage";
 
 export const event: IEvent = {
     name: "interactionCreate",
@@ -20,7 +20,14 @@ export const event: IEvent = {
         if (interaction.type === 3) {
             switch (interaction.data.custom_id) {
                 case "sfw_panel":
-                    switch ((interaction.data as any).values[0] as TOptionType) {
+                    if (interaction.message.id !== client.database.fetch(`Panel.${interaction.guildID}.MessageID`)) {
+                        return interaction.createMessage({
+                            embeds: [new RichEmbed().setColor(0xFFC0BC).setDescription("This panel might be outdated. Please setup panel again with the `/setup` slash command")],
+                            flags: 64
+                        });
+                    }
+
+                    switch ((interaction.data as any).values[0] as TImageOption) {
                         case "SFWAzurLaneImage":
                             azurLaneISFWInteraction(client, interaction, true);
                             break;
@@ -32,7 +39,7 @@ export const event: IEvent = {
                             break;
                     }
 
-                    client.editMessage(interaction.channel.id, client.database.fetch(`SFWPanel.${interaction.guildID}.MessageID`) as string, {
+                    client.editMessage(interaction.channel.id, client.database.fetch(`Panel.${interaction.guildID}.MessageID`) as string, {
                         components: panelComponent,
                         embed: panelEmbed
                     });
@@ -46,7 +53,14 @@ export const event: IEvent = {
                     //     })
                     // }
 
-                    switch ((interaction.data as any).values[0] as TOptionType) {
+                    if (interaction.message.id !== client.database.fetch(`Panel.${interaction.guildID}.MessageID`)) {
+                        return interaction.createMessage({
+                            embeds: [new RichEmbed().setColor(0xFFC0BC).setDescription("This panel might be outdated. Please setup panel again with the `/setup` slash command")],
+                            flags: 64
+                        });
+                    }
+
+                    switch ((interaction.data as any).values[0] as TImageOption) {
                         case "NSFWNekoImage":
                             nekoINSFWInteraction(client, interaction, true);
                             break;
@@ -57,7 +71,7 @@ export const event: IEvent = {
                             yuriGNSFWInteraction(client, interaction, true);
                     }
 
-                    client.editMessage(interaction.channel.id, client.database.fetch(`SFWPanel.${interaction.guildID}.MessageID`) as string, {
+                    client.editMessage(interaction.channel.id, client.database.fetch(`Panel.${interaction.guildID}.MessageID`) as string, {
                         components: panelComponent,
                         embed: panelEmbed
                     });
