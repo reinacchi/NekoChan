@@ -38,6 +38,11 @@ export const panelComponent: ActionRow[] = [
                 min_values: 1,
                 options: [
                     {
+                        description: "Lewd Azur Lane Image",
+                        label: "Azur Lane Image",
+                        value: "NSFWAzurLaneImage"
+                    },
+                    {
                         description: "Lewd Neko Image",
                         label: "Neko Image",
                         value: "NSFWNekoImage"

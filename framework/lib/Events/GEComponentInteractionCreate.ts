@@ -2,10 +2,11 @@ import { ComponentInteraction, TextableChannel } from "eris";
 import { IEvent } from "./IEvent";
 import { RichEmbed } from "../Util";
 import { azurLaneISFWInteraction, maidISFWInteraction, nekoISFWInteraction } from "../Commands/Interaction/SFW";
-import { nekoINSFWInteraction, yuriGNSFWInteraction, yuriINSFWInteraction } from "../Commands/Interaction/NSFW";
+import { azurLaneINSFWInteraction, nekoINSFWInteraction, yuriGNSFWInteraction, yuriINSFWInteraction } from "../Commands/Interaction/NSFW";
 import { panelComponent } from "../DefaultComponent";
 
-type TImageOption = "NSFWNekoGif" | "NSFWNekoImage" | "NSFWYuriGif" | "NSFWYuriImage" | "SFWAzurLaneImage" | "SFWMaidImage" | "SFWNekoGif" | "SFWNekoImage";
+type TSFWImage = "SFWAzurLaneImage" | "SFWMaidImage" | "SFWNekoGif" | "SFWNekoImage";
+type TNSFWImage = "NSFWAzurLaneImage" | "NSFWNekoGif" | "NSFWNekoImage" | "NSFWYuriGif" | "NSFWYuriImage";
 
 export const event: IEvent = {
     name: "interactionCreate",
@@ -27,7 +28,7 @@ export const event: IEvent = {
                         });
                     }
 
-                    switch ((interaction.data as any).values[0] as TImageOption) {
+                    switch ((interaction.data as any).values[0] as TSFWImage) {
                         case "SFWAzurLaneImage":
                             azurLaneISFWInteraction(client, interaction, true);
                             break;
@@ -60,7 +61,10 @@ export const event: IEvent = {
                         });
                     }
 
-                    switch ((interaction.data as any).values[0] as TImageOption) {
+                    switch ((interaction.data as any).values[0] as TNSFWImage) {
+                        case "NSFWAzurLaneImage":
+                            azurLaneINSFWInteraction(client, interaction, true);
+                            break;
                         case "NSFWNekoImage":
                             nekoINSFWInteraction(client, interaction, true);
                             break;
