@@ -22,6 +22,11 @@ export const panelComponent: ActionRow[] = [
                         description: "Cute Neko Image",
                         label: "Neko Image",
                         value: "SFWNekoImage"
+                    },
+                    {
+                        description: "Cute NekoPara Image",
+                        label: "NekoPara Image",
+                        value: "SFWNekoParaImage"
                     }
                 ],
                 placeholder: "Select SFW Image/Gif",
@@ -46,6 +51,11 @@ export const panelComponent: ActionRow[] = [
                         description: "Lewd Neko Image",
                         label: "Neko Image",
                         value: "NSFWNekoImage"
+                    },
+                    {
+                        description: "Lewd NekoPara Image",
+                        label: "NekoPara Image",
+                        value: "NSFWNekoParaImage"
                     },
                     {
                         description: "Lewd Yuri Image",
