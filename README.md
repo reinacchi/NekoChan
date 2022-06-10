@@ -22,6 +22,9 @@ npm run build:framework
 # Run the bot
 npm run ci:bot
 npm run start:bot
+
+# Run the bot (Hot Reload)
+npm dev:bot
 ```
 
 Once you run these commands in order and successfully, a log should appears indicating that the bot has connected to Discord.
@@ -34,6 +37,9 @@ Once you run these commands in order and successfully, a log should appears indi
 # ESLint
 npm run lint:framework
 npm run lint:framework:fix # Automatically fix ESLint problems
+
+# Build the framework
+npm run build:framework
 ```
 
 ## Third-Party Resources
