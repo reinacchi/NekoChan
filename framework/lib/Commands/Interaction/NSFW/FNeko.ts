@@ -18,7 +18,7 @@ export async function nekoINSFWInteraction(client: NekoChanClient, interaction: 
         .setFooter(`Requested By: ${interaction.member.username}#${interaction.member.discriminator}`)
         .setTimestamp()
         .setImage(response.file)
-        .setTitle("Cute Lewd Neko Image");
+        .setTitle("Lewd Neko Image");
 
     if (panelMode) {
         return interaction.createMessage({
