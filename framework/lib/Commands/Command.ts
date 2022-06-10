@@ -2,10 +2,10 @@ import { ICommandRunPayload } from "./ICommand";
 import { CommandInteraction, TextableChannel } from "eris";
 import { NekoChanClient } from "../Client";
 import { pingInteraction } from "./Interaction/FPing";
-import { azurLaneISFWInteraction, maidISFWInteraction, nekoISFWInteraction } from "./Interaction/SFW";
+import { azurLaneISFWInteraction, maidISFWInteraction, nekoISFWInteraction, nekoParaISFWInteraction } from "./Interaction/SFW";
 import { registerCommandInteraction } from "./Interaction/FRegister";
 import { cleanInteraction } from "./Interaction/FClean";
-import { azurLaneINSFWInteraction, nekoINSFWInteraction, yuriGNSFWInteraction, yuriINSFWInteraction } from "./Interaction/NSFW";
+import { azurLaneINSFWInteraction, nekoINSFWInteraction, nekoParaINSFWInteraction, yuriGNSFWInteraction, yuriINSFWInteraction } from "./Interaction/NSFW";
 import { setupPanelInteraction } from "./Interaction/FSetupPanel";
 import { setupBookmarkInteraction } from "./Interaction/FSetupBookmark";
 
@@ -73,11 +73,27 @@ export class Command {
     }
 
     /**
+     * Sends a NSFW NekoPara image
+     * @returns {Promise<void>}
+     */
+    public nekoParaINSFWInteraction(): Promise<void> {
+        return nekoParaINSFWInteraction(this.client, this.interaction);
+    }
+
+    /**
      * Sends a SFW Neko image
      * @returns {Promise<void>}
      */
     public nekoISFWInteraction(): Promise<void> {
         return nekoISFWInteraction(this.client, this.interaction);
+    }
+
+    /**
+     * Sends a SFW NekoPara image
+     * @returns {Promise<void>}
+     */
+    public nekoParaISFWInteraction(): Promise<void> {
+        return nekoParaISFWInteraction(this.client, this.interaction);
     }
 
     /**
