@@ -1,7 +1,7 @@
 import { NekoChanCommand } from "nekochan-framework";
 import { RichEmbed } from "nekochan-framework/src/Util";
 
-type TImageType = "azurLane" | "maid" | "neko" | "waifu";
+type TImageType = "AzurLaneImage" | "MaidImage" | "NekoImage" | "NekoParaImage";
 
 export const command: NekoChanCommand.ICommand = {
     category: "SFW",
@@ -16,15 +16,19 @@ export const command: NekoChanCommand.ICommand = {
             choices: [
                 {
                     name: "Azur Lane",
-                    value: "azurLane"
+                    value: "AzurLaneImage"
                 },
                 {
                     name: "Maid",
-                    value: "maid"
+                    value: "MaidImage"
                 },
                 {
                     name: "Neko",
-                    value: "neko"
+                    value: "NekoImage"
+                },
+                {
+                    name: "NekoPara",
+                    value: "NekoParaImage"
                 }
             ]
         }
@@ -39,14 +43,17 @@ export const command: NekoChanCommand.ICommand = {
         }
 
         switch (args.image) {
-            case "azurLane":
+            case "AzurLaneImage":
                 command.azurLaneISFWInteraction();
                 break;
-            case "maid":
+            case "MaidImage":
                 command.maidISFWInteraction();
                 break;
-            case "neko":
+            case "NekoImage":
                 command.nekoISFWInteraction();
+                break;
+            case "NekoParaImage":
+                command.nekoParaISFWInteraction();
                 break;
             default:
                 payload.interaction.createMessage({

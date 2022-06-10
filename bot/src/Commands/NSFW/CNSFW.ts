@@ -1,7 +1,7 @@
 import { NekoChanCommand } from "nekochan-framework";
 
 type TGifType = "NekoGif" | "YuriGif";
-type TImageType = "AzurLaneImage" | "NekoImage" | "YuriImage";
+type TImageType = "AzurLaneImage" | "NekoImage" | "NekoParaImage" | "YuriImage";
 
 export const command: NekoChanCommand.ICommand = {
     category: "NSFW",
@@ -22,6 +22,10 @@ export const command: NekoChanCommand.ICommand = {
                 {
                     name: "Neko",
                     value: "NekoImage"
+                },
+                {
+                    name: "NekoPara",
+                    value: "NekoParaImage"
                 },
                 {
                     name: "Yuri",
@@ -58,6 +62,9 @@ export const command: NekoChanCommand.ICommand = {
                     break;
                 case "NekoImage":
                     command.nekoINSFWInteraction();
+                    break;
+                case "NekoParaImage":
+                    command.nekoParaINSFWInteraction();
                     break;
                 case "YuriImage":
                     command.yuriINSFWInteraction();
