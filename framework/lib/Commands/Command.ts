@@ -5,7 +5,7 @@ import { pingInteraction } from "./Interaction/FPing";
 import { azurLaneISFWInteraction, maidISFWInteraction, nekoISFWInteraction, nekoParaISFWInteraction } from "./Interaction/SFW";
 import { registerCommandInteraction } from "./Interaction/FRegister";
 import { cleanInteraction } from "./Interaction/FClean";
-import { azurLaneINSFWInteraction, nekoINSFWInteraction, nekoParaINSFWInteraction, yuriGNSFWInteraction, yuriINSFWInteraction } from "./Interaction/NSFW";
+import { azurLaneINSFWInteraction, kitsuneINSFWInteraction, nekoINSFWInteraction, nekoParaINSFWInteraction, trapINSFWInteraction, yuriGNSFWInteraction, yuriINSFWInteraction } from "./Interaction/NSFW";
 import { setupPanelInteraction } from "./Interaction/FSetupPanel";
 import { setupBookmarkInteraction } from "./Interaction/FSetupBookmark";
 
@@ -54,6 +54,14 @@ export class Command {
      */
     public cleanInteraction(): Promise<void> {
         return cleanInteraction(this.client, this.interaction);
+    }
+
+    /**
+     * Sends a NSFW Kitsune image
+     * @returns {Promise<void>}
+     */
+    public kitsuneINSFWInteraction(): Promise<void> {
+        return kitsuneINSFWInteraction(this.client, this.interaction);
     }
 
     /**
@@ -126,6 +134,14 @@ export class Command {
      */
     public setupPanelInteraction(): Promise<void> {
         return setupPanelInteraction(this.client, this.interaction);
+    }
+
+    /**
+     * Sends a NSFW Trap image
+     * @returns {Promise<void>}
+     */
+    public trapINSFWInteraction(): Promise<void> {
+        return trapINSFWInteraction(this.client, this.interaction);
     }
 
     /**
