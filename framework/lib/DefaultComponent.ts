@@ -48,6 +48,11 @@ export const panelComponent: ActionRow[] = [
                         value: "NSFWAzurLaneImage"
                     },
                     {
+                        description: "Lewd Kitsune Image",
+                        label: "Kitsune Image",
+                        value: "NSFWKitsuneImage"
+                    },
+                    {
                         description: "Lewd Neko Image",
                         label: "Neko Image",
                         value: "NSFWNekoImage"
@@ -56,6 +61,11 @@ export const panelComponent: ActionRow[] = [
                         description: "Lewd NekoPara Image",
                         label: "NekoPara Image",
                         value: "NSFWNekoParaImage"
+                    },
+                    {
+                        description: "Lewd Trap Image",
+                        label: "Trap Image",
+                        value: "NSFWTrapImage"
                     },
                     {
                         description: "Lewd Yuri Image",

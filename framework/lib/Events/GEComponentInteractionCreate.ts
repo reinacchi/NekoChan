@@ -2,11 +2,11 @@ import { ComponentInteraction, TextableChannel } from "eris";
 import { IEvent } from "./IEvent";
 import { RichEmbed } from "../Util";
 import { azurLaneISFWInteraction, maidISFWInteraction, nekoISFWInteraction, nekoParaISFWInteraction } from "../Commands/Interaction/SFW";
-import { azurLaneINSFWInteraction, nekoINSFWInteraction, nekoParaINSFWInteraction, yuriGNSFWInteraction, yuriINSFWInteraction } from "../Commands/Interaction/NSFW";
+import { azurLaneINSFWInteraction, kitsuneINSFWInteraction, nekoINSFWInteraction, nekoParaINSFWInteraction, trapINSFWInteraction, yuriGNSFWInteraction, yuriINSFWInteraction } from "../Commands/Interaction/NSFW";
 import { panelComponent } from "../DefaultComponent";
 
 type TSFWImage = "SFWAzurLaneImage" | "SFWMaidImage" | "SFWNekoGif" | "SFWNekoImage" | "SFWNekoParaImage";
-type TNSFWImage = "NSFWAzurLaneImage" | "NSFWNekoGif" | "NSFWNekoImage" | "NSFWNekoParaImage" | "NSFWYuriGif" | "NSFWYuriImage";
+type TNSFWImage = "NSFWAzurLaneImage" | "NSFWKitsuneImage" | "NSFWNekoGif" | "NSFWNekoImage" | "NSFWNekoParaImage" | "NSFWTrapImage" | "NSFWYuriGif" | "NSFWYuriImage";
 
 export const event: IEvent = {
     name: "interactionCreate",
@@ -68,11 +68,17 @@ export const event: IEvent = {
                         case "NSFWAzurLaneImage":
                             azurLaneINSFWInteraction(client, interaction, true);
                             break;
+                        case "NSFWKitsuneImage":
+                            kitsuneINSFWInteraction(client, interaction, true);
+                            break;
                         case "NSFWNekoImage":
                             nekoINSFWInteraction(client, interaction, true);
                             break;
                         case "NSFWNekoParaImage":
                             nekoParaINSFWInteraction(client, interaction, true);
+                            break;
+                        case "NSFWTrapImage":
+                            trapINSFWInteraction(client, interaction, true);
                             break;
                         case "NSFWYuriImage":
                             yuriINSFWInteraction(client, interaction, true);
