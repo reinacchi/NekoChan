@@ -35,7 +35,7 @@ export class Logger {
     /**
      * Logs a custom logging message
      * @param options The logging options
-     * @param options.color The color of the log
+     * @param options.colour The colour of the log
      * @param options.message The message of the log
      * @param options.type The type of the log
      * @param options.title The title of the log
@@ -43,13 +43,12 @@ export class Logger {
      * @returns {void}
      */
     log(options: ICustomLoggingOptions): void {
-        return console.log(`${chalk.bgHex(options.color)(` ${options.type.toUpperCase()} `)}${options.subTitle ? chalk.bgWhite(chalk.black(` ${options.subTitle} `)) : ""} ${chalk.underline(options.title.toUpperCase())} - ${chalk.grey(moment().format("MMMM Do YYYY, hh:mm:ss A"))} - ${chalk.hex(options.color)(options.message)}`);
+        return console.log(`${chalk.bgHex(options.colour)(` ${options.type.toUpperCase()} `)}${options.subTitle ? chalk.bgWhite(chalk.black(` ${options.subTitle} `)) : ""} ${chalk.underline(options.title.toUpperCase())} - ${chalk.grey(moment().format("MMMM Do YYYY, hh:mm:ss A"))} - ${chalk.hex(options.colour)(options.message)}`);
     }
 
     /**
      * Logs a success logging message
      * @param options The logging options
-     * @param options.color The color of the log
      * @param options.message The message of the log
      * @param options.type The type of the log
      * @param options.title The title of the log
@@ -63,7 +62,6 @@ export class Logger {
     /**
      * Logs a system logging message
      * @param options The logging options
-     * @param options.color The color of the log
      * @param options.message The message of the log
      * @param options.type The type of the log
      * @param options.title The title of the log
@@ -77,7 +75,6 @@ export class Logger {
     /**
      * Logs a warning logging message
      * @param options The logging options
-     * @param options.color The color of the log
      * @param options.message The message of the log
      * @param options.type The type of the log
      * @param options.title The title of the log

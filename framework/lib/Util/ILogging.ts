@@ -3,7 +3,7 @@ export interface ICustomLoggingOptions {
     title: string;
     subTitle?: string;
     message: string;
-    color: string;
+    colour: string;
 }
 
 export interface ILoggingOptions {
