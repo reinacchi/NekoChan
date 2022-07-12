@@ -4,6 +4,7 @@
     },
     "BOT": {
         "ADMIN": ["User ID"],
+        "DEBUG_MODE": false,
         "PREFIX": "!",
         "TOKEN": "TOKEN"
     }
